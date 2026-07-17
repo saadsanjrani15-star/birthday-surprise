@@ -1,0 +1,175 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+color:#fff;
+overflow-x:hidden;
+text-align:center;
+}
+
+.hidden{
+display:none;
+}
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#ff4d6d;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+font-weight:bold;
+z-index:9999;
+animation:fadeOut 3s forwards;
+}
+
+@keyframes fadeOut{
+0%{opacity:1;}
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+.hero,
+#giftSection,
+#gallery,
+#letter,
+#final{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.hero h1,
+#final h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero h2{
+font-size:28px;
+margin-bottom:20px;
+}
+
+.hero p,
+#giftSection p,
+#letter p,
+#final p{
+max-width:700px;
+line-height:1.8;
+font-size:18px;
+}
+
+button{
+margin-top:30px;
+padding:15px 35px;
+border:none;
+border-radius:40px;
+background:#fff;
+color:#ff4d6d;
+font-size:18px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.gift-box{
+font-size:100px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-top:30px;
+}
+
+.gallery img{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:20px;
+border:4px solid white;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.letter{
+max-width:700px;
+background:rgba(255,255,255,.15);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+.hearts::before,
+.hearts::after{
+content:"❤";
+position:fixed;
+font-size:25px;
+animation:float 10s linear infinite;
+}
+
+.hearts::before{
+left:15%;
+}
+
+.hearts::after{
+right:15%;
+animation-delay:5s;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@media(max-width:768px){
+
+.hero h1,
+#final h1{
+font-size:34px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery img{
+width:260px;
+height:260px;
+}
+
+}
